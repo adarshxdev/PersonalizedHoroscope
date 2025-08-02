@@ -1,4 +1,4 @@
-const getZodiaSign = () => {
+export const getZodiacSign = (date) => {
     const month = date.getUTCMonth() + 1;
     const day = date.getUTCDate();
 
@@ -18,11 +18,12 @@ const getZodiaSign = () => {
         { sign: "Capricorn", start: [12, 22] }
     ];
 
-    for(let i = zodiacSigns.length()-1; i>=0;i--){
-        const [m, d] = zodiacSigns.start[i];
-        if(month > m || (month == m && day>=d))
+    for (let i = zodiacSigns.length - 1; i >= 0; i--) {
+        const [m, d] = zodiacSigns[i].start;
+        if (month > m || (month === m && day >= d)) {
             return zodiacSigns[i].sign;
+        }
     }
 
-    return "Capricorn"; // Fallback
-}
+    return "Capricorn"; // Fallback for early Jan
+};
