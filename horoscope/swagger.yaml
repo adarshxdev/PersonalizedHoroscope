@@ -15,7 +15,7 @@ components:
       bearerFormat: JWT
 
 paths:
-  /horoscope/today:
+  /api/v1/horoscope/today:
     get:
       summary: Get today's horoscope
       responses:
@@ -25,7 +25,7 @@ paths:
           description: Unauthorized
         '404':
           description: Not found
-  /horoscope/history:
+  /api/v1/horoscope/history:
     get:
       summary: Get past 7 days of horoscope
       responses:

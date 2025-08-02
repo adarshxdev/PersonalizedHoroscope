@@ -32,9 +32,16 @@ export async function getHoroscopeHistory(req, res) {
     return res.status(404).json({ error: "Zodiac not found" });
   }
 
-  // Get the latest 7 dates (sorted desc)
-  const sortedDates = Object.keys(zodiacData).sort((a, b) => new Date(b) - new Date(a));
-  const last7 = sortedDates.slice(0, 7).map(date => ({
+  // Get current date in YYYY-MM-DD format
+  const currentDate = new Date().toISOString().split('T')[0];
+  
+  // Filter dates that are <= current date, then sort desc
+  const availableDates = Object.keys(zodiacData)
+    .filter(date => date <= currentDate)
+    .sort((a, b) => new Date(b) - new Date(a));
+  
+  // Get the latest 7 dates (or fewer if not available)
+  const last7 = availableDates.slice(0, 7).map(date => ({
     date,
     horoscope: zodiacData[date]
   }));
