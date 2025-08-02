@@ -15,31 +15,38 @@ Git
 
 Clone the Repository
 
+```bash
 git clone https://github.com/adarshxdev/PersonalizedHoroscope.git
+```
 
+```bash
 cd PersonalizedHoroscope
+```
 
 Install Dependencies for All Microservices
 In separate terminals:
-
+```bash
 cd auth
 npm install
 
 cd horoscope
 npm install
+```
 
 Configure Environment Variables
 
 Create a .env file in each microservice directory:
 
 auth/.env
-
+```bash
 MONGO_URI=mongodb://localhost:27017/authDB
 JWT_SECRET=supersecretkey
+```
 
 horoscope/.env
-
+```bash
 JWT_SECRET=supersecretkey
+```
 
 Start MongoDB (If Not Already Running)
 
@@ -49,23 +56,30 @@ Run the Microservices
 In separate terminals:
 
 Auth Service
-
+```bash
 cd auth
 npm run dev
-
+```
 Horoscope Service
-
+```bash
 cd horoscope
 npm run dev
+```
 
 ### Access Swagger API Docs
 
-Auth API Docs: http://localhost:3000/api-docs
+Auth API Docs: 
+```bash
+http://localhost:3000/api-docs
+```
 
-Horoscope API Docs: http://localhost:3001/api-docs
+Horoscope API Docs: 
+```bash
+http://localhost:3001/api-docs
+```
 
 📁 Project Structure Overview
-
+```bash
 personalized-horoscope/
 ├── auth/
 │   ├── config/
@@ -82,6 +96,7 @@ personalized-horoscope/
 │   ├── routes/
 │   └── index.js
 └── README.md
+```
 
 ### 💡 AI Assistance
 Parts of this project (e.g., zodiac sign logic, Swagger/OpenAPI setup, and README formatting) were assisted using OpenAI's ChatGPT, used primarily for code generation, explanation, and documentation enhancement.
