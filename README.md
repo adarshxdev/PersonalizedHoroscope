@@ -68,7 +68,9 @@ Horoscope API Docs: http://localhost:3001/api-docs
 
 personalized-horoscope/
 ├── auth/
+│   ├── config/
 │   ├── controllers/
+│   ├── middleware/
 │   ├── routes/
 │   ├── models/
 │   ├── utils/
@@ -76,6 +78,7 @@ personalized-horoscope/
 ├── horoscope/
 │   ├── controllers/
 │   ├── data/
+│   ├── middleware/
 │   ├── routes/
 │   └── index.js
 └── README.md
